@@ -45,7 +45,7 @@ public class CityControllerIT {
 
 		CityDTO dto = new CityDTO(null, "Recife");
 		String jsonBody = objectMapper.writeValueAsString(dto);
-		
+
 		ResultActions result =
 				mockMvc.perform(post("/cities")
 					.content(jsonBody)
@@ -59,7 +59,6 @@ public class CityControllerIT {
 
 	@Test
 	public void deleteShouldReturnNoContentWhenIndependentId() throws Exception {		
-		
 		Long independentId = 5L;
 		
 		ResultActions result =
