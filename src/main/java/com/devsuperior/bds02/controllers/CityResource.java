@@ -1,8 +1,10 @@
-package com.devsuperior.bds02.resources;
+package com.devsuperior.bds02.controllers;
 
 import com.devsuperior.bds02.dto.CityDTO;
 import com.devsuperior.bds02.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,12 @@ public class CityResource {
 
     @Autowired
     private CityService cityService;
+
+    @GetMapping
+    public ResponseEntity<Page<CityDTO>> findAll(Pageable pageable) {
+        Page<CityDTO> list = cityService.findAllPaged(pageable);
+        return ResponseEntity.ok().body(list);
+    }
 
     @PostMapping
     public ResponseEntity<CityDTO> insert(@RequestBody CityDTO cityDTO) {

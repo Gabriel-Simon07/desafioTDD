@@ -21,8 +21,11 @@ public class City {
 	
 	@OneToMany(mappedBy = "city")
 	private List<Event> events = new ArrayList<>();
-	
-	public City() {
+
+
+	public City() {}
+	public City(Long id) {
+		this.id = id;
 	}
 
 	public City(Long id, String name) {

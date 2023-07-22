@@ -1,4 +1,4 @@
-package com.devsuperior.bds02.resources.exceptions;
+package com.devsuperior.bds02.controllers.exceptions;
 
 import com.devsuperior.bds02.services.exceptions.BadRequestException;
 import com.devsuperior.bds02.services.exceptions.ResourceNotFoundException;
